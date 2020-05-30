@@ -5,11 +5,9 @@ function* fetchNews() {
     if(!localStorage.getItem("data")) {
         const data = yield fetch(apiURL)
                             .then(res => res.json())
-                            .then( res => {
-                                var dataToStore = JSON.stringify(res);
-                                localStorage.setItem("data", dataToStore)
-                            })
         yield put({type: 'NEWS_RECEIVED', json: data.articles})
+        var dataToStore = JSON.stringify(data);
+        localStorage.setItem("data", dataToStore)
     }
     else {
         const json = yield JSON.parse(localStorage.getItem("data"))
