@@ -7,14 +7,14 @@
     "start": "node dist/server.js",
     "build": "npm run webpack-production && npm run babel-production"
   },
-  "author": "smoketrees",
+  "proxy": "true",
+  "author": "News App",
   "license": "MIT",
   "nodemonConfig": {
     "ignore": [
       "src/static/**/*"
     ]
   },
-  "homepage": "https://github.com/smoke-trees/forum#readme",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
