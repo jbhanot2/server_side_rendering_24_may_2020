@@ -10,7 +10,7 @@ let NewsItem = ({article, loading}) => (
             {article.map((item,key) => (
                 <Col xs={12} md={6} key={key}>
                     <h3>{item.title}</h3>
-                    <img src={item.urlToImage} width="100%"/>
+                    <img src={item.image} width="100%"/>
                     <h4>{item.description}</h4>
                     <a href={item.url} target="blank">Know more</a>
                 </Col>
