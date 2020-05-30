@@ -1,7 +1,10 @@
 import { put, takeLatest, all } from 'redux-saga/effects';
 
 function* fetchNews() {
-    const json = yield fetch('http://newsapi.org/v2/top-headlines?country=in&apiKey=3fbbff65e76a46259102b7dea8d80067')
+    let headers = {
+        'Content-Type': 'application/json',
+    }
+    const json = yield fetch('http://newsapi.org/v2/top-headlines?country=in&apiKey=3fbbff65e76a46259102b7dea8d80067', {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'http://newsapi.org/', 'API-Key' : '3fbbff65e76a46259102b7dea8d80067', 'Access-Control-Expose-Headers': 'Content-Length,API-Key'})
                     .then(res => res.json())
     yield put({type: 'NEWS_RECEIVED', json:json.articles})
 }
