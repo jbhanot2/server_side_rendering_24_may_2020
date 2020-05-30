@@ -1,6 +1,11 @@
 import React from "react";
-import { hydrate } from "react-dom";
+import ReactDOM from "react-dom";
 import App from '../../pages/'
+import store from '../redux/store';
+import {Provider} from 'react-redux';
 
-
-hydrate(<App />, document.getElementById("root"));
+ReactDOM.hydrate(<Provider store={store}>
+                    <App/>
+                </Provider>
+      , document.getElementById("root")
+);
