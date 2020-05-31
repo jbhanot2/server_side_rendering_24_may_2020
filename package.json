@@ -5,7 +5,8 @@
     "webpack-production": "NODE_ENV=production webpack -p",
     "babel-production": "NODE_ENV=production COMPILER_ENV=server babel --out-dir dist src",
     "start": "node dist/server.js",
-    "build": "npm run webpack-production && npm run babel-production"
+    "build": "npm run webpack-production && npm run babel-production",
+    "start-sw": "http-server src/views"
   },
   "proxy": "http://newsapi.org/",
   "author": "News App",
@@ -31,6 +32,7 @@
     "css-loader": "^3.5.3",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
+    "http-server": "^0.12.3",
     "mini-css-extract-plugin": "^0.9.0",
     "nodemon": "^2.0.2",
     "raw-loader": "^4.0.1",
